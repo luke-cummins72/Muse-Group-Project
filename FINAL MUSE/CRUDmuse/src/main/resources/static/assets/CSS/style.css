@@ -1,0 +1,1085 @@
+/* Base CSS */
+body{font-family: "Krub", sans-serif;
+    background-image: url("../images/background.png");
+    background-attachment: fixed; margin:0}
+
+.grid-container{margin:auto; display:grid; grid-template-columns: 100%; padding-top: 1em; padding-bottom: 1em}
+
+#header-container{margin:auto; display:grid; grid-template-columns: 100%; background-color: #272829}
+
+#footer-container{margin:auto; display:grid; grid-template-columns: 100%; background-color:#272829; color:white;}
+
+/*logo*/
+
+.logo img{display: block;
+    margin: 0.7em auto;
+    max-width:20%;}
+
+.profilePic {
+    width: 50px; /* Set the desired size of the profile picture */
+    height: 50px; /* Maintain a square aspect ratio */
+    border-radius: 50%; /* Make it a perfect circle */
+    object-fit: cover; /* Ensure the image fills the area without distortion */
+    border: 2px solid white; /* Optional: Add a border for better visibility */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow for depth */
+    transition: transform 0.2s ease-in-out; /* Smooth zoom effect on hover */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #272829;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1em;
+}
+
+.navbar a {
+    font-weight: 600;
+    color: white;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar a.active {
+    text-decoration: underline;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger icon for mobile view */
+.navbar .icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 1em;
+}
+
+/*dropdown for logged in users*/
+.dropbtn {
+    background-color: #272829;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2; /* Ensure it appears above carousel content */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 2; /* Ensure it appears above carousel container */
+}
+
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: #272829;
+    min-width: 100px;
+    z-index: 1050; /* Higher than carousel and other elements */
+    right: 0;
+    border-radius: 4px; /* Optional: Add rounded corners for a modern look */
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/*register*/
+
+#registerForm textarea{width:100%}
+
+.error{color:red; font-size: 13px}
+
+#loginForm a, #registerForm a{text-decoration: none}
+
+#registerForm input[type=file], #registerForm select{
+    width:100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/*Log In Form*/
+
+.fa-eye{cursor: pointer}
+
+.form-popup{width:80%; margin: auto}
+
+.form-popup select{width: 100%}
+
+.form-container {
+    width: 90%;
+    padding: 1.5em;
+    background-color: white;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+#loginForm #password{
+    margin: 5px 0 0 0;
+}
+
+.forgotPassword{font-size: 13px; font-weight: 300;}
+
+#loginForm button{margin-top: 22px}
+
+.form-container input[type=text],
+.form-container input[type=password],
+.form-container input[type=email],
+.form-container input[type=number],
+textarea{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus, .form-container input[type=email]:focus, .form-container textarea:focus, .form-container input[type=date]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn{
+    background-color: #272829;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.form-container button{
+    border-radius: 10px;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.form-container h2 {
+    text-align: center;
+    padding: 12px;
+}
+
+.form-container p {
+    font-size: 14px;
+}
+
+.or-hr1 {
+    float: left;
+    width: 42%;
+    margin-top: 8px;
+}
+
+.or-hr2, .or-hr2 {
+    float: right;
+    width: 42%;
+    margin-top: 8px;
+}
+
+.or {
+    float: left;
+    padding-left: 7%;
+}
+
+.form-text {
+    padding: 6px;
+}
+.password-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.password-container i {
+    position: absolute;
+    top: 20%;
+    right: 5%
+}
+
+/*End of Log In Form */
+
+/*index*/
+
+#hero, .hero {width: 100%}
+
+h1, h2, .carousel-caption{
+    font-family: "Bacasime Antique", serif}
+
+.inspire, .creativity, .explore, .showcasesTitle{text-align: center}
+
+.grid-container h2{padding: 0.5em 0; text-align: center}
+
+.grid-container img{ display: block;
+    margin-left: auto;
+    margin-right: auto;}
+
+#carouselExampleDesktop {margin: auto; background-color: #ffffff; width:100%}
+
+.showcase1-text a, .showcase2-text a, .showcase3-text a{text-decoration: none; color: black; font-weight: 900}
+
+.grid-container a{text-decoration: none; color: black}
+
+.grid-container a:hover{text-decoration: underline;}
+
+.col1 img, .col2 img, .col3 img{max-width: 100%;}
+
+/*about */
+
+.aboutText1 h3, .aboutText2 h3{text-decoration: underline}
+
+/*saved projects*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content select,
+.modal-content input[type=text],
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+}
+
+.modal-content button {
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.or-hr2 {
+    float: right;
+    width: 42%;
+    margin-top: 8px;
+}
+
+.bookmark-icon {
+    color: white; /* Filled white by default */
+    font-size: 24px; /* Adjust size as needed */
+    transition: color 0.3s ease;
+}
+.bookmark-icon.toggled {
+    color: transparent; /* Makes the inside transparent */
+    border: 2px solid white; /* Creates an outline for the bookmark */
+    border-radius: 12px; /* Rounded corners to resemble a bookmark */
+    padding: 2px; /* Optional: Adjust padding for spacing */
+}
+
+.dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.dropdown-select {
+    appearance: none; /* Hides the default browser arrow */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding-right: 40px; /* Adds space for the arrow */
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+.dropdown-arrow {
+    position: absolute;
+    top: 40%;
+    right: 15px; /* Position inside the dropdown box */
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #555;
+    font-size: 16px;
+}
+
+.interest-level {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.filter{width:20%;
+    border: none;
+    opacity: 1}
+
+/* Project Details*/
+.projectHero a {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.projectHero .fa-edit { color: white; cursor: pointer; font-size: 1.5em; }
+
+.projectHero .fa-edit:hover { color: grey; }
+
+.projectHero img { width: 100%; }
+
+.projectHero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: 2em;
+    margin-bottom: 1px; /* Reduce spacing below the title */
+}
+
+.owner {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3px 0; /* Adjust padding to reduce spacing above and below the owner */
+}
+
+.dateCreated {
+    margin-top: 1px; /* Reduce spacing above the "Date Created" */
+}
+
+.creator, .projectButton, .documents {
+    text-align: center;
+}
+
+.descriptions {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px; /* Optional: add some padding to space out the text */
+}
+
+.descriptionsEmployer {
+    max-width: 800px;
+    margin:0 10em;
+    padding: 20px; /* Optional: add some padding to space out the text */
+}
+
+.descriptions p {
+    margin-bottom: 10px; /* Optional: add spacing between description paragraphs */
+}
+
+.shortDescription, .longDescription, .noteOne, .noteTwo {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*Add*/
+.fa-bookmark, .fa-arrow-left{margin: 10px; font-size:1.5em}
+
+.addImage{float: left; width:45%;
+    height: auto;
+    padding: 0;
+    position: relative;
+    background-color: black;
+    margin:0 1em 1em
+}
+
+.viewImage{float: left; width:45%;
+    height: auto;
+    padding: 0;
+    position: relative;
+    background-color: black;
+    margin:0 1em 1em
+}
+
+.viewImage img{
+    padding: 0;
+    max-width: 100%;
+    display: block;
+    opacity: 1;
+    height:30em;
+}
+
+.addImage:hover img {
+    opacity: 0.3;
+}
+
+.addImage:hover .addImageContent{
+    opacity: 1;
+}
+
+.addImage img{
+    padding: 0;
+    max-width: 100%;
+    display: block;
+    opacity: 1;
+    height:30em;
+}
+
+.addImage img,
+.addImageContent {
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease-out;
+}
+
+.addImageContent {
+    position: absolute;
+    color: white;
+    left: 0;
+    top: 50%;
+    right: 50%;
+    width:100%;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+}
+
+#addShowcase input,
+#addShowcase textarea{
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#addShowcase input[type=file], #addShowcase select{
+    width:25%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#addShowcase{width:100%}
+
+#addProject input,
+#addProject textarea{
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#addProject input[type=file], #addProject input[type=date]{
+    width:25%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#addProject select{
+    width:50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#addProject{width:100%}
+
+/*edit*/
+
+#editShowcase input,
+#editShowcase textarea,
+#editProject input,
+#editProject textarea{
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#editProject select{
+    width:50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#editShowcase select, #editProject input[type=file], #editProject input[type=date]{
+    width: 25%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#editShowcase, #editProject{width:100%}
+
+.updateButton, .deleteButton, .backButton, .addButton, .saveButton{max-width: 49%}
+
+.backButton{float: left}
+
+.backButton2{max-width: 100%}
+
+.updateButton, .addButton, .saveButton{float: right}
+
+/*profile*/
+#profile label {
+    display: block; /* Ensure the label is displayed as a block, which forces the label to be on its own line above the input */
+    margin-top: 10px; /* Optional: adds space between the label and the element above it */
+    font-weight: bold; /* Optional: to make labels bold for better visibility */
+}
+
+#profile .backButton{max-width:100%}
+
+#profile input[type=text],
+#profile input[type=email],
+#profile textarea{
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 10px;
+    display: block;
+}
+
+.profileName {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    opacity: 1;
+}
+
+
+.hero-container {
+    position: relative;
+    text-align: left;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 35%;
+    left: 5%;
+    margin: auto
+}
+
+.title-hr{width:100%;
+    border: none;
+    border-bottom: 2px solid black;
+    opacity: 1}
+
+/*hover card*/
+
+.manageButtons {
+    text-align: center;
+    background-color: grey;
+    border:1.5px solid black;
+    border-top:0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.manageButtons a, .manageButtons button {
+    margin: 0 12%;
+    color: white; /* Adjust icon color */
+    font-size: 2em;
+}
+
+.manageButtons a:hover, .manageButtons button:hover {
+    color: lightgrey; /* Twitter's brand color on hover */
+    text-decoration: none;
+}
+
+.manageButtons button:focus {
+    outline: none;
+}
+
+.manageButtons button{background-color: transparent; border: 0 transparent}
+
+.cards {
+    height: auto;
+    padding: 0;
+    position: relative;
+    background-color: black;
+    border:1.5px solid black;
+}
+
+.cards:hover img{
+    opacity: 0.3;
+}
+
+.cards:hover .card-content {
+    opacity: 1;
+}
+
+.cards img {
+    padding: 0;
+    max-width: 100%;
+    display: block;
+    opacity: 1;
+}
+
+.cards img,
+.card-content {
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+}
+
+.card-content{
+    position: absolute;
+    color: white;
+    left: 0;
+    top: 70%;
+    right: 50%;
+    width:100%;
+    bottom: 0;
+    text-align: center;
+    opacity: 0;
+}
+
+.card-content a{color: white;}
+
+.card-content a:hover{text-decoration: none}
+
+.title {
+    overflow: hidden;
+    text-align: center;
+}
+
+.title::before,
+.title::after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20%;
+}
+
+.title::before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.title::after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/* dashboard*/
+
+.dashboard1, .dashboard2, .dashboard1_2, .dashboard2_2, .dashboard3_2{background-color: whitesmoke;
+    padding: 1em 2em;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1em;}
+
+.dashboard1, .dashboard2, .dashboard1_2 a, .dashboard3_2 a{margin: 1em}
+
+.dashboard1 img, .dashboard2 img, .dashboard1_2 img, .dashboard2_2 img, .dashboard3_2 img{margin: auto; width: 40%;}
+
+
+/* --START OF FOOTER-- */
+#footer-container {
+    background-color: #272829;
+    bottom: 0;
+    width: 100%;
+    padding: 20px; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.footer-line1 {
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.find-your-muse {
+    color: white;
+    text-align: center; /* Center align text */
+    margin: auto
+}
+
+.sub-text{
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+}
+
+.sub-text2{
+    font-size: 13px;
+}
+
+hr {
+    margin: auto;
+}
+
+.footer-line2 {
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center
+}
+
+.footer-line2 a{background: #272829;
+    color: white;
+    margin: 1em;}
+
+.footer-text1,
+.footer-text2,
+.footer-text3,
+.footer-text4,
+.footer-text5,
+.footer-text6 {
+    font-size: 12px; padding-left: 10px;
+}
+
+.footer-logo {
+    margin: auto;
+    padding: 10px 0; /* Add vertical padding */
+}
+
+.footer-texts {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: left; /* Center horizontally */
+    color: white;
+    font-size: 12px;
+    margin: auto 2em;
+}
+
+.footer-text6{
+    display: flex;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin: auto
+}
+
+.globe{
+    color: white;
+    padding-left: 20px;
+    margin: auto
+}
+
+.fa-brands{text-decoration: none}
+
+.fa {
+    padding: 2px;
+    width: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+/*End of Footer*/
+
+
+/* Mobile */
+@media screen and (max-width: 992px) {
+
+    .grid-container{grid-row-gap:2em; margin:1em}
+
+    #carouselExampleDesktop img {
+        height: 300px; /* Adjust this based on your image aspect ratio */
+        object-fit: cover;
+    }
+
+    .card-content {
+        position: absolute;
+        color: white;
+        left: 0;
+        top: 75%;
+        right: 0;
+        bottom: 0;
+        font-size: 24px;
+        text-align: center;
+        opacity: 0;
+    }
+
+    .navbar a:not(.active) {
+        display: none;
+    }
+
+    .navbar a.icon {
+        display: block; /* Show hamburger icon */
+        position: absolute; /* Keep it fixed */
+        right: 0.5px;
+    }
+
+    .navbar.responsive {
+        position:relative;
+        float:  none;
+
+    }
+
+    .navbar.responsive .icon {
+        position:absolute;
+        text-align: right;
+        right: 0.5px;
+        top:12.5px;
+    }
+
+    .navbar.responsive a{
+        float:right;
+        display:block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar .active{display:block;
+        text-align: center;
+        width: 100%;}
+
+    .navbar a:hover {text-decoration: underline
+    }
+
+    .navbar a.icon:hover {
+        text-decoration: none
+    }
+
+    .dropdown-content {
+        display:none;
+        position:inherit;
+        background-color: #272829;
+        min-width: 100px;
+        z-index: 1;
+    }
+
+    .about, .slogan, .socials {padding:2em}
+
+    .addImage{float: left; width:95%;}
+
+    #addProject input,
+    #addProject textarea,
+    #addProject select,
+    #addShowcase input,
+    #addShowcase textarea,
+    #editProject input,
+    #editProject textarea,
+    #editProject select,
+    #editShowcase input,
+    #editShowcase textarea,
+    #profile input[type=text],
+    #profile textarea,
+    textarea{
+        width: 100%;
+    }
+
+    #profile .backButton{max-width: 100%;}
+
+    #editProject input[type=date],
+    #editProject input[type=file],
+    #addProject input[type=date],
+    #addProject input[type=file],
+    #addShowcase select,
+    #editShowcase select{width:49%}
+
+    .addProject{height:10em;}
+
+    .dateCreated{text-align: center}
+
+}
+
+/*Desktop view*/
+
+@media only screen and (min-width:992px)
+{
+
+    #header-container{grid-template-columns:repeat(16, 6.25%);}
+
+    .grid-container{grid-template-columns:repeat(20, 5%);grid-row-gap:2em; margin: 2em}
+
+    #footer-container{grid-template-columns:repeat(16, 6.25%); padding:20px;}
+
+    .logo img{max-width: 90%;}
+
+    /*Columns*/
+
+    .logo{grid-column:1/3;}
+
+    .row{grid-column:1/21;}
+
+    nav{grid-column:9/17;}
+
+    #carouselExampleDesktop{grid-column: 1/21}
+
+    .hero-container{grid-column: 1/21}
+
+    .form-popup{grid-column: 1/21}
+
+    h1, .dashboardTitle{grid-column: 1/21}
+
+    /*index*/
+
+    .inspire{grid-column: 1/7}
+
+    .creativity{grid-column: 8/14}
+
+    .explore{grid-column: 15/21}
+
+    .showcasesTitle{grid-column: 1/21}
+
+    /* about*/
+
+    .aboutImage{grid-column: 2/11}
+
+    .aboutText1{grid-column: 12/20}
+
+    .aboutImage2{grid-column: 12/20;}
+
+    .aboutText2{grid-column: 2/11;}
+
+    /*showcases*/
+
+    .filter{grid-column: 1/21;}
+
+    /*Project Details*/
+
+    .titleCreator{grid-column:1/21}
+
+    .projectHero{grid-column: 6/16}
+
+    .title{grid-column:1/21}
+
+    .creator{grid-column: 1/21}
+
+    .dateCreated{grid-column: 2/20; text-align: center}
+
+    .documents{grid-column: 1/21}
+
+    /* Showcase Details*/
+
+    .descriptions, .descriptionsEmployer, .status, .submissionDeadline{grid-column: 2/20}
+
+    .projects{grid-column: 1/21}
+
+    /* Saved Project Details*/
+
+    .noteOne, .noteTwo, .projectButton{grid-column: 2/20}
+
+    /*Add Project*/
+
+    .form-container{grid-column: 1/21}
+
+    /*dashboards*/
+
+    .title-hr{grid-column: 1/21;}
+
+    .dashboard1{grid-column: 3/10}
+
+    .dashboard2{grid-column: 12/19}
+
+    .dashboard1_2{grid-column: 1/7}
+
+    .dashboard2_2{grid-column: 8/14}
+
+    .dashboard3_2{grid-column: 15/21}
+
+    /* Manage Showcase*/
+
+    .manageText{grid-column: 1/21}
+
+    h3{grid-column: 1/21}
+
+    /*footer*/
+
+    .footer-line1 {grid-column:1/5 ;}
+
+    .footer-hr1{width: 130px; grid-column: 5/7;}
+
+    .find-your-muse {grid-column:7/11;}
+
+    .footer-hr2{width: 130px; grid-column: 11/13;}
+
+    .footer-line2 {grid-column: 13/17;}
+
+    .footer-divider{grid-column: 1/17;}
+
+    .footer-logo {grid-column:1/2}
+
+    .footer-texts {grid-column: 2/14;}
+
+    .globe{grid-column:14/15;}
+
+    .footer-text6{grid-column:15/17 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

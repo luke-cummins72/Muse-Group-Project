@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse - Edit Saved Project</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krub">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+<body>
+<header id="header-container">
+    <div class="logo">
+        <a href="/MuseGallery/Index">
+            <img src="/assets/images/logoIcons/Logo.png" alt="Logo">
+        </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" id="myTopnav">
+        <a href="/MuseGallery/Index" >Home</a>
+        <a href="/MuseGallery/About">About Us</a>
+        <a href="/projects/allProjects">Projects</a>
+        <a href="/showcases/allShowcases">Showcases</a>
+
+        <div th:if="${user == null}">
+            <div class="dropdown">
+                <button class="dropbtn"><i class='fas fa-user-circle' style="font-size: 30px"></i></button>
+                <div class="dropdown-content">
+                    <a href="/MuseGallery/Register">Register</a>
+                    <a href="/MuseGallery/Login">Log In</a>
+                </div>
+            </div>
+        </div>
+
+        <div th:if="${user != null}">
+            <div class="dropdown">
+                <button class="dropbtn"><img class="profilePic" th:src="@{'/assets/images/users/' + ${user.userImage}}"></button>
+                <div class="dropdown-content">
+                    <a th:href="@{'/user/' + ${user.userType} + 'Dashboard'}" class="active">Profile</a>
+                    <a href="/MuseGallery/logout">Log out</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:void(0);" style="font-size:20px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
+</header>
+
+<div class="grid-container">
+    <h1>Edit Saved Project</h1>
+    <hr class="title-hr">
+
+    <form th:action="@{/user/saveUpdatedSavedProject}" th:object="${savedProject}" method="post" enctype="multipart/form-data" class="form-container" id="editSavedProject">
+
+        <!-- Hidden input for savedProjectsID -->
+        <input type="hidden" th:field="*{savedProjectsID}" />
+
+        <!-- Project Image Section -->
+        <div class="project-image-container">
+            <img th:src="@{'/assets/images/projects/thumbnail/thumb_' + ${savedProject.project.projectImage}}" alt="Project Thumbnail" class="project-image">
+        </div>
+
+        <!-- Project Name -->
+        <h2 th:text="${savedProject.project.projectName}" class="title"></h2>
+        <p class="creator"><strong>Created by:</strong> <span th:text="${savedProject.project.user.firstName} + ' ' + ${savedProject.project.user.surname}"></span></p>
+        <p class="shortDescription"><strong>Short Description:</strong> <span th:text="${savedProject.project.shortDescription}"></span></p>
+
+        <!-- Interest Level -->
+
+        <select id="interestLevel" th:field="*{interestLevel}" class="form-select">
+            <option value="" disabled th:if="*{interestLevel} == null" selected>Select Interest Level: </option>
+            <option value="High" th:selected="*{interestLevel} == 'High'">High</option>
+            <option value="Medium" th:selected="*{interestLevel} == 'Medium'">Medium</option>
+            <option value="Low" th:selected="*{interestLevel} == 'Low'">Low</option>
+            <option value="Watching" th:selected="*{interestLevel} == 'Watching'">Watching</option>
+        </select>
+        <span th:if="${#fields.hasErrors('interestLevel')}" th:errors="*{interestLevel}" class="error"></span>
+
+        <!-- Notes 1 -->
+        <p><strong>Note 1: </strong></p>
+        <textarea id="notes1" th:field="*{notes1}" rows="3" placeholder="Enter Notes 1" class="form-control"></textarea>
+        <span th:if="${#fields.hasErrors('notes1')}" th:errors="*{notes1}" class="error"></span>
+
+        <!-- Notes 2 -->
+        <p><strong>Note 2: </strong></p>
+        <textarea id="notes2" th:field="*{notes2}" rows="3" placeholder="Enter Notes 2" class="form-control"></textarea>
+        <span th:if="${#fields.hasErrors('notes2')}" th:errors="*{notes2}" class="error"></span>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <a href="/user/manageSavedProject" class="backButton btn">Back</a>
+            <button type="submit" class="addButton btn">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+<footer id="footer-container" class="bacasime-antique-regular">
+    <div class="footer-line1">
+        <p>We are Muse</p>
+        <a class="sub-text">Our Ethos</a>
+        <p class="sub-text2">Getting Involved</p>
+    </div>
+
+    <hr class="footer-hr1">
+    <div class="find-your-muse">
+        <p>FIND YOUR MUSE</p>
+    </div>
+    <hr class="footer-hr2">
+
+    <div class="footer-line2">
+        <p class="sub-text3">Find us on</p>
+        <p>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-pinterest"></a>
+            <a href="#" class="fa-brands fa-youtube"></a>
+            <a href="#" class="fa-brands fa-twitter"></a>
+        </p>
+    </div>
+
+    <div class="footer-divider"><hr></div>
+    <img class="footer-logo" src="assets/images/logoIcons/logo-footer.png">
+    <div class="footer-texts">
+        <div class="footer-text1"><p>&copy; 2024 Muse</p></div>
+        <div class="footer-text2"><p>Terms & Conditions</p></div>
+        <div class="footer-text3"><p>Privacy Policy</p></div>
+        <div class="footer-text4"><p>Cookie Policy</p></div>
+        <div class="footer-text5"><p>Accessibility</p></div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
